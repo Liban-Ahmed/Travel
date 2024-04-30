@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Travel Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1169.0" data-gr-ext-installed="">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+            <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z">
+            </path>
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+            <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
+            </path>
+            <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
+            </path>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+            </path>
+        </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+            aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (light)">
+            <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+                <use href="#sun-fill"></use>
+            </svg>
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light"
+                    aria-pressed="true">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#sun-fill"></use>
+                    </svg>
+                    Light
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#moon-stars-fill"></use>
+                    </svg>
+                    Dark
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto"
+                    aria-pressed="false">
+                    <svg class="bi me-2 opacity-50" width="1em" height="1em">
+                        <use href="#circle-half"></use>
+                    </svg>
+                    Auto
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="aperture" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path
+                d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94">
+            </path>
+        </symbol>
+        <symbol id="cart" viewBox="0 0 16 16">
+            <path
+                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z">
+            </path>
+        </symbol>
+        <symbol id="chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z">
+            </path>
+        </symbol>
+    </svg>
+
+    <div class="container">
+        <header class="border-bottom lh-1 py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <a class="link-secondary" href="#">Subscribe</a>
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Time Travel Blog</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="link-secondary" href="#" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
+                            viewBox="0 0 24 24">
+                            <title>Search</title>
+                            <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                            <path d="M21 21l-5.2-5.2"></path>
+                        </svg>
+                    </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="nav-scroller py-1 mb-3 border-bottom">
+            <nav class="nav nav-underline justify-content-between">
+                <a class="nav-item nav-link link-body-emphasis active" href="#">World</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">U.S.</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Technology</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Design</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Culture</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Business</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Politics</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Opinion</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Science</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Health</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Style</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Travel</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+            <div class="col-lg-6 px-0">
+                <h1 class="display-4 fst-italic">Welcome to Earth: A Time-Traveler’s Guide to the Jurassic Period</h1>
+                <p class="lead my-3">Greetings, fellow time travelers and extraterrestrial explorers! Today, we’re
+                    journeying back to a time when dinosaurs ruled the Earth - the Jurassic period. Let’s dive into the
+                    details of this fascinating era.</p>
+                <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
+                        <h3 class="mb-0">Is Time Travel Real?</h3>
+                        <div class="mb-1 text-body-secondary">Nov 12</div>
+                        <p class="card-text mb-auto">In today's blog, we explore if time travel is real and if aliens
+                            are among us.</p>
+                        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                            Continue reading
+                            <svg class="bi">
+                                <use xlink:href="#chevron-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="time-travel (1).png" width="200" height="250" class="bd-placeholder-img" role="img"
+                            aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"
+                            alt="Thumbnail">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
+                        <h3 class="mb-0">The Earth is Changing</h3>
+                        <div class="mb-1 text-body-secondary">Nov 11</div>
+                        <p class="mb-auto">The Earth has changed, and it's not what you expect</p>
+                        <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+                            Continue reading
+                            <svg class="bi">
+                                <use xlink:href="#chevron-right"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="pexels-pixabay-87651.jpg" width="200" height="250" class="bd-placeholder-img"
+                            role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                            focusable="false" alt="Thumbnail">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-8">
+                <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                    From the Firehose
+                </h3>
+
+                <article class="blog-post">
+                    <h2 class="display-5 link-body-emphasis mb-1">A Time Traveler's Guide to the Jurassic Period</h2>
+                    <p class="blog-post-meta">April 30, 2024 by <a href="#">Liban</a></p>
+
+                    <p>Welcome, fellow time travelers and extraterrestrial explorers! Today, we're journeying back to a
+                        time when dinosaurs ruled the Earth - the Jurassic period. Let's dive into the details of this
+                        fascinating era.</p>
+                    <hr>
+                    <h2>Tectonic Style and Significant Events</h2>
+                    <p>During the Jurassic period, the supercontinent Pangaea began to rift and split into two
+                        landmasses: Laurasia to the north and Gondwana to the south. This was a time of significant
+                        tectonic activity, with numerous orogenies (mountain-building events) and rifts forming as the
+                        continents moved apart.</p>
+                    <h2>Atmospheric Composition</h2>
+                    <p>The Jurassic atmosphere was quite different from what we're used to today. The carbon dioxide
+                        levels were up to 5 times higher than they are now, leading to a strong greenhouse effect. The
+                        oxygen content was also higher, at around 26% compared to today's 21%.</p>
+                    <h2>Earth's Temperature</h2>
+                    <p>Due to the high levels of carbon dioxide, the Earth's temperature during the Jurassic period was
+                        much warmer than it is today. There were no polar ice caps, and the average global temperature
+                        was about 16.5°C (61.7°F), compared to today's average of 14°C (57.2°F).</p>
+                    <h2>Biosphere Composition</h2>
+                    <p>The Jurassic period was a time of abundant life. Dinosaurs like the Brachiosaurus and Stegosaurus
+                        roamed the land, while the oceans were home to marine reptiles like the Ichthyosaurus. The skies
+                        were dominated by flying reptiles known as Pterosaurs. The first birds also appeared during this
+                        period, evolving from theropod dinosaurs.</p>
+                    <hr>
+
+                </article>
+
+
+
+
+                <article class="blog-post">
+                    <h2 class="display-5 link-body-emphasis mb-1">More Details</h2>
+                    <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
+                    <h2>Jurassic Flora and Fauna:</h2>
+                    <p>
+                        During the Jurassic period, plant life was dominated by ferns, cycads, and conifers. Herbivorous
+                        dinosaurs, such as the Agilisaurus and Camarasaurus, had diets that consisted of these plants.
+                        Unique adaptations of Jurassic plants include the evolution of gymnosperms, cone-bearing plants
+                        like conifers, which allowed for wind distribution of pollen.</p>
+                    <h2>Geographical Distribution</h2>
+                    <p>In the Jurassic period, the supercontinent Pangea split into two large landmasses: Laurasia to
+                        the north and Gondwana to the south. This separation led to the distribution of different
+                        ecosystems across these regions. The migration of species and the evolution of distinct regional
+                        faunas were influenced by these geographical changes.</p>
+                    <h2>Paleoclimate Variability:</h2>
+                    <p>The climate during the Jurassic period was warmer than today, with no ice caps. There were
+                        fluctuations in temperature, rainfall patterns, and sea levels. These climatic changes
+                        influenced the evolution and survival of various organisms. For instance, the diversification
+                        and dominance of dinosaurs were likely influenced by these climatic changes.
+
+                    </p>
+                    <h2>Sources:</h2>
+                    <ul>
+                        <li><a href="https://www.britannica.com/science/Jurassic-Period">Jurassic Period at
+                                Britannica</a></li>
+                        <li><a href="https://www.livescience.com/28739-jurassic-period.html">Jurassic Period Overview at
+                                Live Science</a></li>
+                        <li><a href="https://www.activewild.com/the-jurassic-period/">The Ultimate Guide to the Jurassic
+                                Period</a></li>
+                        <li><a href="https://gagebeasleyprehistoric.com/lists/herbivorous-dinosaurs/">A Guide to 15
+                                Spectacular Herbivorous Dinosaurs</a></li>
+                        <li><a href="https://dinosaurdictionary.com/herbivore-dinosaurs/">Herbivore Dinosaurs
+                                Dictionary</a></li>
+                        <li><a href="https://www.backyardboss.net/plants-older-than-dinosaurs/">Plants Older Than
+                                Dinosaurs</a></li>
+                        <li><a href="https://ebrary.net/3915/history/continents_located_jurassic_period">Continents'
+                                Locations During the Jurassic Period</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Jurassic">Jurassic Period at Wikipedia</a></li>
+                        <li><a href="https://link.springer.com/chapter/10.1007/978-3-030-49753-8_2">Jurassic Period
+                                Dinosaur Paleoecology Chapter</a></li>
+                        <li><a href="https://onlinelibrary.wiley.com/doi/pdf/10.1111/1755-6724.14996">Jurassic
+                                Paleoecology - Wiley</a></li>
+                        <li><a href="https://link.springer.com/article/10.1007/s12549-017-0316-x">Jurassic Paleoecology
+                                Research Article</a></li>
+                        <li><a href="https://sciencing.com/climate-jurassic-era-4932.html">Climate of the Jurassic
+                                Era</a></li>
+                        <li><a
+                                href="https://humanorigins.si.edu/research/climate-and-human-evolution/climate-effects-human-evolution">Climate
+                                Effects on Human Evolution</a></li>
+                        <li><a
+                                href="https://www.smithsonianmag.com/science-nature/how-climate-change-may-have-shaped-human-evolution-180952885/">Climate
+                                Change and Human Evolution at Smithsonian</a></li>
+                        <li><a href="https://www.sciencedaily.com/releases/2019/07/190708140058.htm">Evolution Rules
+                                Changing in Jurassic</a></li>
+                        <li><a
+                                href="https://pubs.geoscienceworld.org/gsl/books/book/2288/chapter/127761170/An-introduction-to-causes-and-consequences-of">Causes
+                                and Consequences of Cretaceous Sea-Level Changes</a></li>
+                        <li><a href="https://www.e-education.psu.edu/earth107/node/1494">Sea Level Change Context at
+                                PSU</a></li>
+                        <li><a href="https://www.britannica.com/science/Jurassic-Period/Paleoclimate">Jurassic Period
+                                Paleoclimate at Britannica</a></li>
+                        <li><a href="https://www.nationalgeographic.org/article/earths-changing-climate/">Earth's
+                                Changing Climate - National Geographic</a></li>
+                    </ul>
+
+                </article>
+
+                <nav class="blog-pagination" aria-label="Pagination">
+                    <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
+                    <a class="btn btn-outline-secondary rounded-pill disabled" aria-disabled="true">Newer</a>
+                </nav>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="p-4 mb-3 bg-body-tertiary rounded">
+                        <h4 class="fst-italic">About</h4>
+                        <p class="mb-0">Hi, I'm Liban! I created this page for the Time Travel Assignment. Please reach
+                            out with any questions or concerns!</p>
+                    </div>
+
+                    <div>
+                        <h4 class="fst-italic">Recent posts</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#">
+                                    <img src="./image1.jpg" width="200" height="98" class="bd-placeholder-img"
+                                        role="img" aria-label="Placeholder: Thumbnail"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false" alt="Thumbnail">
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Earth History</h6>
+                                        <small class="text-body-secondary">January 15, 2024</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#">
+                                    <img src="./image.jpg" width="200" height="98" class="bd-placeholder-img" role="img"
+                                        aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                        focusable="false" alt="Thumbnail">
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">My Favorite Dinosaur</h6>
+                                        <small class="text-body-secondary">January 14, 2024</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#">
+                                    <img src="./image3.jpg" width="200" height="98" class="bd-placeholder-img"
+                                        role="img" aria-label="Placeholder: Thumbnail"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false" alt="Thumbnail">
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Why is Geology Important in Today's World!
+                                        </h6>
+                                        <small class="text-body-secondary">January 13, 2024</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4">
+                        <h4 class="fst-italic">Archives</h4>
+                        <ol class="list-unstyled mb-0">
+                            <li><a href="#">March 2021</a></li>
+                            <li><a href="#">February 2021</a></li>
+                            <li><a href="#">January 2021</a></li>
+                            <li><a href="#">December 2020</a></li>
+                            <li><a href="#">November 2020</a></li>
+                            <li><a href="#">October 2020</a></li>
+                            <li><a href="#">September 2020</a></li>
+                            <li><a href="#">August 2020</a></li>
+                            <li><a href="#">July 2020</a></li>
+                            <li><a href="#">June 2020</a></li>
+                            <li><a href="#">May 2020</a></li>
+                            <li><a href="#">April 2020</a></li>
+                        </ol>
+                    </div>
+
+                    <div class="p-4">
+                        <h4 class="fst-italic">Elsewhere</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+        <p>Liban Ahmed 2023</p>
+        <p class="mb-0">
+            <a href="#">Back to top</a>
+        </p>
+    </footer>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+
+
+    <div id="save-code-popup-parent"></div>
+</body>
+
+</html>
